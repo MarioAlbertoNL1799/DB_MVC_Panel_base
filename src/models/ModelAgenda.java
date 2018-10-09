@@ -92,6 +92,14 @@ public class ModelAgenda {
      */
     public void moverPrimerRegistro() {
         System.out.println("moverPrimerRegistro");
+        try{
+            rs.first();
+            nombre = rs.getString("nombre");
+            email = rs.getString("email");
+            telefono = rs.getString("telefono");
+        }catch(SQLException err){
+            JOptionPane.showMessageDialog(null, "Error model 106: " + err.getMessage());
+        }
     }
 
     /**
