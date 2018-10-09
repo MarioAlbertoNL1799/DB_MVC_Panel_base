@@ -24,6 +24,7 @@ public class ModelAgenda {
 
     private String nombre;
     private String email;
+    private String telefono;
 
     public String getNombre() {
         return nombre;
@@ -39,6 +40,14 @@ public class ModelAgenda {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+    
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
     }
 
     /**
@@ -69,6 +78,7 @@ public class ModelAgenda {
         try {
             nombre = rs.getString("nombre");
             email = rs.getString("email");
+            telefono = rs.getString("telefono");
         } catch (SQLException err) {
             JOptionPane.showMessageDialog(null, "Error model 102: " + err.getMessage());
 
@@ -112,4 +122,5 @@ public class ModelAgenda {
     public void moverUltimoRegistro() {
         System.out.println("moverUltimoRegistro");
     }
+
 }
