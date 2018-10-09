@@ -121,6 +121,14 @@ public class ModelAgenda {
      */
     public void moverUltimoRegistro() {
         System.out.println("moverUltimoRegistro");
+        try{
+            rs.last();
+            nombre = rs.getString("nombre");
+            email = rs.getString("email");
+            telefono = rs.getString("telefono");
+        }catch(SQLException err){
+            JOptionPane.showMessageDialog(null, "Error model 106: " + err.getMessage());
+        }
     }
 
 }
