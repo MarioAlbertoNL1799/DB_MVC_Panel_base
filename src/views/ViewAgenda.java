@@ -29,23 +29,39 @@ public class ViewAgenda extends javax.swing.JPanel {
 
         jl_nombre = new javax.swing.JLabel();
         jl_email = new javax.swing.JLabel();
+        jl_telefono = new javax.swing.JLabel();
         jtf_nombre = new javax.swing.JTextField();
         jtf_email = new javax.swing.JTextField();
+        jtf_telefono = new javax.swing.JTextField();
         jbtn_primero = new javax.swing.JButton();
         jbtn_anterior = new javax.swing.JButton();
         jbtn_siguiente = new javax.swing.JButton();
         jbtn_ultimo = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(0, 153, 153));
+
+        jl_nombre.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jl_nombre.setForeground(new java.awt.Color(255, 255, 255));
         jl_nombre.setText("Nombre");
 
+        jl_email.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jl_email.setForeground(new java.awt.Color(255, 255, 255));
         jl_email.setText("Email");
 
+        jl_telefono.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jl_telefono.setForeground(new java.awt.Color(255, 255, 255));
+        jl_telefono.setText("Teléfono");
+
+        jbtn_primero.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
         jbtn_primero.setText("|<");
 
+        jbtn_anterior.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
         jbtn_anterior.setText("<<");
 
+        jbtn_siguiente.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
         jbtn_siguiente.setText(">>");
 
+        jbtn_ultimo.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
         jbtn_ultimo.setText(">|");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -59,19 +75,21 @@ public class ViewAgenda extends javax.swing.JPanel {
                         .addComponent(jbtn_primero)
                         .addGap(18, 18, 18)
                         .addComponent(jbtn_anterior)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(27, 27, 27)
                         .addComponent(jbtn_siguiente)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(27, 27, 27)
                         .addComponent(jbtn_ultimo))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jl_nombre)
-                            .addComponent(jl_email))
+                            .addComponent(jl_email)
+                            .addComponent(jl_telefono))
                         .addGap(39, 39, 39)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jtf_email, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jtf_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(89, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jtf_email, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
+                            .addComponent(jtf_nombre, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
+                            .addComponent(jtf_telefono))))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -80,17 +98,21 @@ public class ViewAgenda extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jl_nombre)
                     .addComponent(jtf_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jl_email)
                     .addComponent(jtf_email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(38, 38, 38)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jtf_telefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jl_telefono))
+                .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jbtn_primero)
                     .addComponent(jbtn_anterior)
                     .addComponent(jbtn_siguiente)
                     .addComponent(jbtn_ultimo))
-                .addContainerGap(149, Short.MAX_VALUE))
+                .addContainerGap(27, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -102,7 +124,9 @@ public class ViewAgenda extends javax.swing.JPanel {
     public javax.swing.JButton jbtn_ultimo;
     public javax.swing.JLabel jl_email;
     public javax.swing.JLabel jl_nombre;
+    private javax.swing.JLabel jl_telefono;
     public javax.swing.JTextField jtf_email;
     public javax.swing.JTextField jtf_nombre;
+    private javax.swing.JTextField jtf_telefono;
     // End of variables declaration//GEN-END:variables
 }
