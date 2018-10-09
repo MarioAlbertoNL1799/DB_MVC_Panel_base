@@ -130,6 +130,16 @@ public class ModelAgenda {
      */
     public void moverAnteriorRegistro() {
         System.out.println("moverAnteriorRegistro");
+       try{
+            if(rs.isFirst()== false){
+               rs.previous();
+               nombre = rs.getString("nombre");
+               email = rs.getString("email");
+               telefono = rs.getString("telefono"); 
+            }
+        }catch(SQLException err){
+            JOptionPane.showMessageDialog(null, "Error model 106: " + err.getMessage());
+        } 
     }
 
     /**
