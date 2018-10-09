@@ -124,9 +124,9 @@ public class ViewAgenda extends javax.swing.JPanel {
     public javax.swing.JButton jbtn_ultimo;
     public javax.swing.JLabel jl_email;
     public javax.swing.JLabel jl_nombre;
-    private javax.swing.JLabel jl_telefono;
+    public javax.swing.JLabel jl_telefono;
     public javax.swing.JTextField jtf_email;
     public javax.swing.JTextField jtf_nombre;
-    private javax.swing.JTextField jtf_telefono;
+    public javax.swing.JTextField jtf_telefono;
     // End of variables declaration//GEN-END:variables
 }
