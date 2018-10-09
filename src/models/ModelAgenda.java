@@ -98,7 +98,7 @@ public class ModelAgenda {
             email = rs.getString("email");
             telefono = rs.getString("telefono");
         }catch(SQLException err){
-            JOptionPane.showMessageDialog(null, "Error model 106: " + err.getMessage());
+            JOptionPane.showMessageDialog(null, "Error model 103: " + err.getMessage());
         }
     }
 
@@ -118,7 +118,7 @@ public class ModelAgenda {
                telefono = rs.getString("telefono"); 
             }
         }catch(SQLException err){
-            JOptionPane.showMessageDialog(null, "Error model 106: " + err.getMessage());
+            JOptionPane.showMessageDialog(null, "Error model 104: " + err.getMessage());
         }
     }
 
@@ -138,7 +138,7 @@ public class ModelAgenda {
                telefono = rs.getString("telefono"); 
             }
         }catch(SQLException err){
-            JOptionPane.showMessageDialog(null, "Error model 106: " + err.getMessage());
+            JOptionPane.showMessageDialog(null, "Error model 105: " + err.getMessage());
         } 
     }
 
