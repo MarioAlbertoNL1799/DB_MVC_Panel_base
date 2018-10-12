@@ -203,4 +203,27 @@ public class ModelAgenda {
             JOptionPane.showMessageDialog(null,"ErrorModelAgenda 007: " + err.getMessage());
         }
     }
+    /**
+     * Método que permite lo siguiente:
+     * 1.- Toma el valor del contacto actual.
+     * 2.- Elimina el dato de la tabla y envia un mensaje de actualizacion.
+     * 3.- ctualiza la base de datos y se reinicia la conexion con la base de datos.
+     * 4.- Mostrar los datos de el contacto anterior.
+     */
+    public void Borrrar(){
+        int prueba = JOptionPane.showConfirmDialog(null, "¿Desea eliminar el registro?");
+        if(JOptionPane.OK_OPTION == prueba){
+            try{
+                id = rs.getInt("id_contacto");
+                st.executeUpdate("delete from contactos where id_contacto =" + id + "; ");
+                JOptionPane.showMessageDialog(null, "Agenda actualizada, el registro ha sido eliminado");
+                st.executeQuery("select * from contactos");
+                conectarDB();
+                rs.first();
+            }
+            catch(SQLException err){
+               JOptionPane.showMessageDialog(null, "Error ModelAgenda 008:" + err.getMessage());
+            }
+        }
+    }
 }
