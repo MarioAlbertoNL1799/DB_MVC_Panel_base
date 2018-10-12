@@ -74,6 +74,7 @@ public class ControllerAgenda {
         viewAgenda.jtf_nombre.setText(modelAgenda.getNombre());
         viewAgenda.jtf_email.setText(modelAgenda.getEmail());
         viewAgenda.jtf_telefono.setText(modelAgenda.getTelefono());
+        cerrar(false);
     }
 
 //    /**
@@ -146,7 +147,10 @@ public class ControllerAgenda {
         viewAgenda.jtf_telefono.setText(modelAgenda.getTelefono());
     }
     private void jbtn_nuevo_actionPerformed() {
-    
+        cerrar(true);
+        this.viewAgenda.jtf_email.setText(null);
+        this.viewAgenda.jtf_nombre.setText(null);
+        this.viewAgenda.jtf_telefono.setText(null);
     }
     private void jbtn_insertar_actionPerformed() {
     
@@ -155,12 +159,16 @@ public class ControllerAgenda {
     
     }
     private void jbtn_guardar_actionPerformed() {
-    
+        cerrar(false);
     }
     private void jbtn_cancelar_actionPerformed() {
-    
+        cerrar(false);
     }
     private void jbtn_eliminar_actionPerformed() {
-    
+    }
+    private void cerrar(boolean a){
+        this.viewAgenda.jtf_email.setEditable(a);
+        this.viewAgenda.jtf_nombre.setEditable(a);
+        this.viewAgenda.jtf_telefono.setEditable(a);
     }
 }
