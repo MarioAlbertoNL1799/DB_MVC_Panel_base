@@ -76,6 +76,10 @@ public class ControllerAgenda {
         viewAgenda.jtf_email.setText(modelAgenda.getEmail());
         viewAgenda.jtf_telefono.setText(modelAgenda.getTelefono());
         cerrar(false);
+        botones(true);
+        this.viewAgenda.jbtn_insertar.setVisible(false);
+        this.viewAgenda.jbtn_guardar.setVisible(false);
+        this.viewAgenda.jbtn_cancelar.setVisible(false);
     }
 
 //    /**
@@ -156,6 +160,9 @@ public class ControllerAgenda {
         this.viewAgenda.jtf_email.setText(null);
         this.viewAgenda.jtf_nombre.setText(null);
         this.viewAgenda.jtf_telefono.setText(null);
+        botones(false);
+        this.viewAgenda.jbtn_insertar.setVisible(true);
+        this.viewAgenda.jbtn_cancelar.setVisible(true);
     }
     /**
      * Metodo que inserta un nuevo registro en la base de datos y verifica que este completo los campos.
@@ -170,6 +177,9 @@ public class ControllerAgenda {
         else{
             modelAgenda.Insertar();
             cerrar(false);
+            botones(true);
+            this.viewAgenda.jbtn_insertar.setVisible(false);
+            this.viewAgenda.jbtn_cancelar.setVisible(false);
         }
     }
     /**
@@ -178,6 +188,9 @@ public class ControllerAgenda {
     private void jbtn_modificar_actionPerformed() {
         System.out.println("Action del boton jbtn_modificar");
         cerrar(true);
+        botones(false);
+        this.viewAgenda.jbtn_guardar.setVisible(true);
+        this.viewAgenda.jbtn_cancelar.setVisible(true);
     }
     /**
      * Metodo que guarda cambios en un registro actualizado.
@@ -189,6 +202,9 @@ public class ControllerAgenda {
         modelAgenda.setTelefono(viewAgenda.jtf_telefono.getText());
         modelAgenda.Modificar();
         cerrar(false);
+        botones(true);
+        this.viewAgenda.jbtn_cancelar.setVisible(false);
+        this.viewAgenda.jbtn_guardar.setVisible(false);
     }
     /**
      * Metodo que cancela cualquier movimiento.
@@ -196,6 +212,11 @@ public class ControllerAgenda {
     private void jbtn_cancelar_actionPerformed() {
         System.out.println("Action del boton jbtn_cancelar");
         cerrar(false);
+        botones(true);
+        jbtn_anterior_actionPerformed();
+        this.viewAgenda.jbtn_cancelar.setVisible(false);
+        this.viewAgenda.jbtn_guardar.setVisible(false);
+        this.viewAgenda.jbtn_insertar.setVisible(false);
     }
     /**
      * Metodo que elimina un registro.
@@ -212,5 +233,14 @@ public class ControllerAgenda {
         this.viewAgenda.jtf_email.setEditable(a);
         this.viewAgenda.jtf_nombre.setEditable(a);
         this.viewAgenda.jtf_telefono.setEditable(a);
+    }
+    private void botones(boolean a){
+        this.viewAgenda.jbtn_anterior.setVisible(a);
+        this.viewAgenda.jbtn_siguiente.setVisible(a);
+        this.viewAgenda.jbtn_primero.setVisible(a);
+        this.viewAgenda.jbtn_ultimo.setVisible(a);
+        this.viewAgenda.jbtn_nuevo.setVisible(a);
+        this.viewAgenda.jbtn_modificar.setVisible(a);
+        this.viewAgenda.jbtn_eliminar.setVisible(a);
     }
 }
