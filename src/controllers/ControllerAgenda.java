@@ -148,6 +148,7 @@ public class ControllerAgenda {
         viewAgenda.jtf_telefono.setText(modelAgenda.getTelefono());
     }
     private void jbtn_nuevo_actionPerformed() {
+        System.out.println("Action del boton jbtn_nuevo");
         cerrar(true);
         this.viewAgenda.jtf_email.setText(null);
         this.viewAgenda.jtf_nombre.setText(null);
@@ -166,15 +167,23 @@ public class ControllerAgenda {
         }
     }
     private void jbtn_modificar_actionPerformed() {
+        System.out.println("Action del boton jbtn_modificar");
         cerrar(true);
     }
     private void jbtn_guardar_actionPerformed() {
+        System.out.println("Action del boton jbtn_guardar");
+        modelAgenda.setNombre(viewAgenda.jtf_nombre.getText());
+        modelAgenda.setEmail(viewAgenda.jtf_email.getText());
+        modelAgenda.setTelefono(viewAgenda.jtf_telefono.getText());
+        modelAgenda.Modificar();
         cerrar(false);
     }
     private void jbtn_cancelar_actionPerformed() {
+        System.out.println("Action del boton jbtn_cancelar");
         cerrar(false);
     }
     private void jbtn_eliminar_actionPerformed() {
+        System.out.println("Action del boton jbtn_eliminar");
     }
     private void cerrar(boolean a){
         this.viewAgenda.jtf_email.setEditable(a);
