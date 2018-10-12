@@ -7,6 +7,7 @@ package controllers;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
 import models.ModelAgenda;
 import views.ViewAgenda;
 
@@ -153,7 +154,16 @@ public class ControllerAgenda {
         this.viewAgenda.jtf_telefono.setText(null);
     }
     private void jbtn_insertar_actionPerformed() {
-    
+        System.out.println("Action del boton jbtn_insertar");
+        modelAgenda.setNombre(viewAgenda.jtf_nombre.getText());
+        modelAgenda.setEmail(viewAgenda.jtf_email.getText());
+        modelAgenda.setTelefono(viewAgenda.jtf_telefono.getText());
+        if (modelAgenda.getNombre().isEmpty() ||modelAgenda.getEmail().isEmpty()||modelAgenda.getTelefono().isEmpty())
+            JOptionPane.showMessageDialog(null, "Complete todos los campos");
+        else{
+            modelAgenda.Insertar();
+            cerrar(false);
+        }
     }
     private void jbtn_modificar_actionPerformed() {
     
