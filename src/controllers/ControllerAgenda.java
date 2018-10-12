@@ -166,7 +166,7 @@ public class ControllerAgenda {
         }
     }
     private void jbtn_modificar_actionPerformed() {
-    
+        cerrar(true);
     }
     private void jbtn_guardar_actionPerformed() {
         cerrar(false);
