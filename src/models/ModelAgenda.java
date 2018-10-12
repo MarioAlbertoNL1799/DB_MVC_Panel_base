@@ -25,6 +25,7 @@ public class ModelAgenda {
     private String nombre;
     private String email;
     private String telefono;
+    private int id;
 
     public String getNombre() {
         return nombre;
@@ -48,6 +49,14 @@ public class ModelAgenda {
 
     public void setTelefono(String telefono) {
         this.telefono = telefono;
+    }
+    
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     /**
@@ -158,5 +167,20 @@ public class ModelAgenda {
             JOptionPane.showMessageDialog(null, "Error model 106: " + err.getMessage());
         }
     }
-
+ /**
+     *Método que inserta un nuevo registro que realiza lo siguiente:
+     * 1.- Inserta un nuevo registro tomando los datos de la variable nombre y email
+     * 2.- Realiza una conexion nuevamente con la base de datos
+     * 3.- Muestra los datos del ultimo registro
+     */
+    public void Insertar(){
+        try{
+                st.executeUpdate("Insert into contactos (nombre,email, telefono)"+ "values( '"+nombre+"','"+email+"','"+telefono+"');");
+                JOptionPane.showMessageDialog(null, "Contacto registrado");
+                conectarDB();
+                moverUltimoRegistro();
+        }catch(SQLException err){
+             JOptionPane.showMessageDialog(null, "Error ModelAgenda 006: " + err.getMessage());
+        }
+    }
 }
