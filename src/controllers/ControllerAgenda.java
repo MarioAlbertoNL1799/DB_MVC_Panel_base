@@ -34,6 +34,18 @@ public class ControllerAgenda {
                 jbtn_siguiente_actionPerformed();
             } else if (e.getSource() == viewAgenda.jbtn_ultimo) {
                 jbtn_ultimo_actionPerformed();
+            } else if (e.getSource() == viewAgenda.jbtn_nuevo) {
+                jbtn_nuevo_actionPerformed();
+            } else if (e.getSource() == viewAgenda.jbtn_insertar) {
+                jbtn_insertar_actionPerformed();
+            } else if (e.getSource() == viewAgenda.jbtn_modificar){
+                jbtn_modificar_actionPerformed();
+            } else if (e.getSource() == viewAgenda.jbtn_cancelar) {
+                jbtn_cancelar_actionPerformed();
+            } else if (e.getSource() == viewAgenda.jbtn_eliminar) {
+                jbtn_eliminar_actionPerformed();
+            } else if (e.getSource() == viewAgenda.jbtn_guardar) {
+                jbtn_guardar_actionPerformed();
             }
 
         }
@@ -81,6 +93,12 @@ public class ControllerAgenda {
         viewAgenda.jbtn_anterior.addActionListener(actionListener);
         viewAgenda.jbtn_siguiente.addActionListener(actionListener);
         viewAgenda.jbtn_ultimo.addActionListener(actionListener);
+        viewAgenda.jbtn_nuevo.addActionListener(actionListener);
+        viewAgenda.jbtn_insertar.addActionListener(actionListener);
+        viewAgenda.jbtn_modificar.addActionListener(actionListener);
+        viewAgenda.jbtn_guardar.addActionListener(actionListener);
+        viewAgenda.jbtn_eliminar.addActionListener(actionListener);
+        viewAgenda.jbtn_cancelar.addActionListener(actionListener);
     }
 
     /**
@@ -126,5 +144,23 @@ public class ControllerAgenda {
         viewAgenda.jtf_nombre.setText(modelAgenda.getNombre());
         viewAgenda.jtf_email.setText(modelAgenda.getEmail());
         viewAgenda.jtf_telefono.setText(modelAgenda.getTelefono());
+    }
+    private void jbtn_nuevo_actionPerformed() {
+    
+    }
+    private void jbtn_insertar_actionPerformed() {
+    
+    }
+    private void jbtn_modificar_actionPerformed() {
+    
+    }
+    private void jbtn_guardar_actionPerformed() {
+    
+    }
+    private void jbtn_cancelar_actionPerformed() {
+    
+    }
+    private void jbtn_eliminar_actionPerformed() {
+    
     }
 }
