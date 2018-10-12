@@ -147,6 +147,9 @@ public class ControllerAgenda {
         viewAgenda.jtf_email.setText(modelAgenda.getEmail());
         viewAgenda.jtf_telefono.setText(modelAgenda.getTelefono());
     }
+    /**
+     * Metodo que activa los botones para un nuevo registro.
+     */
     private void jbtn_nuevo_actionPerformed() {
         System.out.println("Action del boton jbtn_nuevo");
         cerrar(true);
@@ -154,6 +157,9 @@ public class ControllerAgenda {
         this.viewAgenda.jtf_nombre.setText(null);
         this.viewAgenda.jtf_telefono.setText(null);
     }
+    /**
+     * Metodo que inserta un nuevo registro en la base de datos y verifica que este completo los campos.
+     */
     private void jbtn_insertar_actionPerformed() {
         System.out.println("Action del boton jbtn_insertar");
         modelAgenda.setNombre(viewAgenda.jtf_nombre.getText());
@@ -166,10 +172,16 @@ public class ControllerAgenda {
             cerrar(false);
         }
     }
+    /**
+     * Metodo que modifica un registro actual
+     */
     private void jbtn_modificar_actionPerformed() {
         System.out.println("Action del boton jbtn_modificar");
         cerrar(true);
     }
+    /**
+     * Metodo que guarda cambios en un registro actualizado.
+     */
     private void jbtn_guardar_actionPerformed() {
         System.out.println("Action del boton jbtn_guardar");
         modelAgenda.setNombre(viewAgenda.jtf_nombre.getText());
@@ -178,14 +190,24 @@ public class ControllerAgenda {
         modelAgenda.Modificar();
         cerrar(false);
     }
+    /**
+     * Metodo que cancela cualquier movimiento.
+     */
     private void jbtn_cancelar_actionPerformed() {
         System.out.println("Action del boton jbtn_cancelar");
         cerrar(false);
     }
+    /**
+     * Metodo que elimina un registro.
+     */
     private void jbtn_eliminar_actionPerformed() {
         System.out.println("Action del boton jbtn_eliminar");
         modelAgenda.Borrrar();
     }
+    /**
+     * Medo que activara o desactivara las cajas de texto.
+     * @param a variable bolleana para activar o desactivar datos.
+     */
     private void cerrar(boolean a){
         this.viewAgenda.jtf_email.setEditable(a);
         this.viewAgenda.jtf_nombre.setEditable(a);
