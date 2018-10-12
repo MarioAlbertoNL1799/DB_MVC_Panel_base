@@ -182,5 +182,25 @@ public class ModelAgenda {
         }catch(SQLException err){
              JOptionPane.showMessageDialog(null, "Error ModelAgenda 006: " + err.getMessage());
         }
+    }    
+    /**
+     * Método que realiza lo siguiente:
+     * 1.- Toma y almacena el numero del registro actual.
+     * 2.- Actualiza los valores de nombe y email de dicho registro.
+     * 3.- Envia un mensaje de actualizacion.
+     * 4.- Realiza una nueva conexion a la base de datos.
+     * 5.- Muestra el registro con la actualizacion hecha.
+     */
+    public void Modificar(){
+        try{
+            id = rs.getInt("id_contacto");
+            st.executeUpdate("update contactos set nombre = '"+ nombre +"', email = '"+ email +"', telefono = '"+telefono+"' where id_contacto = "+ id +"; ");
+            JOptionPane.showMessageDialog(null, "Agenda actualizada");
+            st.executeQuery("select * from contactos");
+            conectarDB();
+            rs.absolute(id);
+        } catch(SQLException err){
+            JOptionPane.showMessageDialog(null,"ErrorModelAgenda 007: " + err.getMessage());
+        }
     }
 }
