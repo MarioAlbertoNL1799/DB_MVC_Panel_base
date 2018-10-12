@@ -184,6 +184,7 @@ public class ControllerAgenda {
     }
     private void jbtn_eliminar_actionPerformed() {
         System.out.println("Action del boton jbtn_eliminar");
+        modelAgenda.Borrrar();
     }
     private void cerrar(boolean a){
         this.viewAgenda.jtf_email.setEditable(a);
